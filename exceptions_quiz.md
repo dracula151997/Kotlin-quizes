@@ -265,6 +265,4 @@ Sample input and output:
 
 ---
 
-This task gives you experience with multiple exception types and teaches you how to handle user input in a robust way. It will also solidify your understanding of Kotlin's exception handling mechanisms and best practices.
-
 
