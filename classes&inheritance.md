@@ -116,7 +116,7 @@ Here’s a code-focused quiz to test your understanding of Kotlin classes and in
    ```kotlin
    open class Vehicle(val speed: Int)
    
-   ____ class ElectricCar(speed: Int, val battery: Int) : Vehicle(speed)
+   ____ ElectricCar(speed: Int, val battery: Int) : Vehicle(speed)
    ```
    - A) extend
    - B) inherit
