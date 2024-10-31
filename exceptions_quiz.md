@@ -214,3 +214,57 @@ Here’s a Kotlin code-focused quiz on exceptions, aimed at assessing practical 
     - B) ArrayIndexOutOfBoundsException, then Cleanup done
     - C) Cleanup done only
     - D) No output
+-------
+Here’s a practical task to help you get hands-on experience with Kotlin exceptions:
+
+---
+
+### Task: Build a Simple Calculator with Exception Handling
+
+#### Objective
+Create a command-line calculator in Kotlin that performs basic arithmetic operations (addition, subtraction, multiplication, division) and handles exceptions gracefully.
+
+#### Instructions
+
+1. **Set up the Calculator**:
+   - Prompt the user to enter two numbers and an operation symbol (`+`, `-`, `*`, `/`).
+   - Parse the input, and perform the requested operation on the two numbers.
+
+2. **Handle Exceptions**:
+   - **Number Format Exception**: If the input for the numbers isn’t valid (e.g., non-numeric input), catch the `NumberFormatException` and display a helpful message like "Invalid input. Please enter a number."
+   - **Division by Zero**: Catch cases where the user tries to divide by zero. Display a message: "Cannot divide by zero."
+   - **Unsupported Operation**: Handle cases where the operation symbol is not one of the four expected symbols (`+`, `-`, `*`, `/`). Throw an exception with a message: "Unsupported operation."
+
+3. **Additional Validation**:
+   - Use `require` or `check` to validate that the inputs are non-null and that an operation symbol is provided.
+   - Use a `finally` block to display a message after each calculation attempt, such as "Calculation complete."
+
+#### Example
+
+Sample input and output:
+
+   ```
+   Enter first number: 10
+   Enter operation (+, -, *, /): /
+   Enter second number: 0
+   Output: Cannot divide by zero.
+   Calculation complete.
+   ```
+
+   ```
+   Enter first number: 5
+   Enter operation (+, -, *, /): x
+   Output: Unsupported operation.
+   Calculation complete.
+   ```
+
+#### Bonus
+
+- Create a loop that allows the user to perform multiple calculations until they choose to exit.
+- Add support for decimal numbers, and catch any potential issues with floating-point operations.
+
+---
+
+This task gives you experience with multiple exception types and teaches you how to handle user input in a robust way. It will also solidify your understanding of Kotlin's exception handling mechanisms and best practices.
+
+
