@@ -58,8 +58,6 @@
     - C) Exception
     - D) Error
 -----
-Here’s a Kotlin code-focused quiz on exceptions, aimed at assessing practical understanding and application of Kotlin’s exception handling features:
-
 ### Code Quiz on Kotlin Exceptions
 
 1. **What will be the output of the following code?**
