@@ -47,3 +47,133 @@
    - d) None of the above
 
 10. **True or False**: A property in Kotlin can have a custom getter without a backing field.
+---------
+
+### Kotlin Properties Code Quiz
+
+1. **What will the following code output?**
+   ```kotlin
+   class Person {
+       val name: String = "Alice"
+       var age: Int = 25
+           get() = field + 1
+   }
+
+   fun main() {
+       val person = Person()
+       println(person.age)
+   }
+   ```
+   - a) 24
+   - b) 25
+   - c) 26
+   - d) Compilation error
+
+2. **What does the following code do when accessing `name`?**
+   ```kotlin
+   class User {
+       lateinit var name: String
+   }
+
+   fun main() {
+       val user = User()
+       println(user.name)
+   }
+   ```
+   - a) Prints `null`
+   - b) Throws an `UninitializedPropertyAccessException`
+   - c) Prints an empty string
+   - d) Compiles without an error
+
+3. **Given this code, what will `greeting` return?**
+   ```kotlin
+   class Greeting {
+       val greeting: String
+           get() = "Hello, Kotlin!"
+   }
+
+   fun main() {
+       val greet = Greeting()
+       println(greet.greeting)
+   }
+   ```
+   - a) "Hello"
+   - b) Compilation error
+   - c) "Hello, Kotlin!"
+   - d) "Kotlin"
+
+4. **What will the following code print?**
+   ```kotlin
+   class Example {
+       var counter = 0
+           set(value) {
+               if (value >= 0) field = value
+           }
+   }
+
+   fun main() {
+       val example = Example()
+       example.counter = -10
+       println(example.counter)
+   }
+   ```
+   - a) -10
+   - b) 0
+   - c) Compilation error
+   - d) None of the above
+
+5. **What will this code output?**
+   ```kotlin
+   class Student {
+       val grade: String = "A"
+       init {
+           println("Grade is $grade")
+       }
+   }
+
+   fun main() {
+       val student = Student()
+   }
+   ```
+   - a) "Grade is A"
+   - b) "Grade is"
+   - c) "Compilation error"
+   - d) Nothing
+
+6. **What is the output of this code?**
+   ```kotlin
+   class Sample {
+       var text: String = "Kotlin"
+           private set
+   }
+
+   fun main() {
+       val sample = Sample()
+       sample.text = "Java"
+       println(sample.text)
+   }
+   ```
+   - a) "Java"
+   - b) "Kotlin"
+   - c) Compilation error
+   - d) Null
+
+7. **What will the following code print?**
+   ```kotlin
+   class Counter {
+       var count: Int by lazy {
+           println("Initializing count")
+           10
+       }
+   }
+
+   fun main() {
+       val counter = Counter()
+       println(counter.count)
+       println(counter.count)
+   }
+   ```
+   - a) "Initializing count\n10\n10"
+   - b) "10\n10"
+   - c) "Initializing count\nInitializing count\n10\n10"
+   - d) Compilation error
