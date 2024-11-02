@@ -177,3 +177,50 @@
    - b) "10\n10"
    - c) "Initializing count\nInitializing count\n10\n10"
    - d) Compilation error
+---
+### Code Challenge: Bank Account Manager
+
+Create a `BankAccount` class with the following requirements:
+
+1. **Properties**:
+   - `accountHolder`: `String` - the name of the account holder (read-only).
+   - `balance`: `Double` - the balance of the account (read/write with custom logic).
+   - `minimumBalance`: `Double` - the minimum balance required in the account (fixed value of 100.0).
+   - `isActive`: `Boolean` - a delegated property that only becomes `true` if the `balance` is above `minimumBalance`.
+
+2. **Custom Setter for `balance`**:
+   - Ensure that the `balance` property never goes below the `minimumBalance`.
+   - If an attempt to withdraw an amount that would result in a balance below the minimum balance is made, print an error message like `"Insufficient funds"` and leave the balance unchanged.
+
+3. **Lazy Initialization**:
+   - Create a lazy-initialized property `accountInfo` that constructs a summary of the account in the format `"Account Holder: [accountHolder], Balance: [balance]"`. This should only be generated when accessed.
+
+4. **Methods**:
+   - `deposit(amount: Double)`: Adds the specified amount to the balance.
+   - `withdraw(amount: Double)`: Deducts the specified amount from the balance if it doesn’t go below the minimum balance.
+
+5. **Testing**:
+   - Create a `main` function to:
+     - Instantiate a `BankAccount`.
+     - Deposit, withdraw, and print the account’s balance.
+     - Print `isActive` status.
+     - Access and print `accountInfo`.
+
+---
+
+### Expected Output Example
+
+Given the following scenario:
+
+```kotlin
+val account = BankAccount("Alice")
+account.deposit(500.0)
+account.withdraw(450.0)
+println(account.balance)           // Should print remaining balance above minimum
+println(account.isActive)          // Should print true or false depending on balance
+println(account.accountInfo)       // Should print the account summary
+account.withdraw(500.0)            // Should print "Insufficient funds" if below minimum balance
+```
+
+--- 
+
